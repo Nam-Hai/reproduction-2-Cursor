@@ -1,0 +1,132 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cursor</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background-color: white;
+            overflow-x: hidden;
+            height: 100vh;
+        }
+        
+        .cursor {
+            position: absolute;
+            top: calc(50% - 6px);
+            left: calc(50% - 6px);
+            height: 11px;
+            width: 11px;
+            background-color: tomato;
+            border-radius: 20%;
+        }
+        #textWrapper {
+            opacity: 1;
+            transition: width 300ms, height 300ms, opacity 300ms;
+            width: 10rem;
+            height: 10rem;
+            animation: rotateImageCursor linear 20s infinite;
+            background-color: white;
+            border-radius: 50%;
+            
+        }
+        #cursorImage {
+            width: 10rem;
+            position: absolute;
+            opacity: 0;
+            transition-duration: 300ms;
+            transition-delay: 100ms;
+        }
+
+        .cursor-wrapper {
+            position: absolute;
+            transition-duration: 300ms;
+            transform-origin: center;
+            pointer-events: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .mix-blend {
+            
+            mix-blend-mode: difference;
+            background-blend-mode: difference;
+        }
+        .cursor-container {
+            height: 0;
+            width: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition-duration: 50ms;
+
+        }
+
+        @keyframes rotateImageCursor {
+            from {
+                transform: rotate(0);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .wrapper {
+            margin: 0 auto 15rem;
+            padding-top: 15rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .hero {
+            height: 15rem;
+            width: 25rem;
+            background-color: darkcyan;
+            margin: 1rem;
+            background-image: url("hero.jpg");
+            background-size: cover;
+        }
+        h2 {
+            background-color: white;
+            font-family: "migra";
+            font-size: 5em;
+        }
+        span {
+            font-weight: 300;
+            background-color: black;
+            color: white;
+            font-family: "Roslindale Text";
+            display: inline-block;
+            height: 102px;
+        }
+        h2:nth-child(3) {
+            font-family: "Migra Italic";
+        }
+    </style>
+</head>
+<body>
+
+    <div class="cursor-wrapper cursor-container mix-blend">
+        <img src="nam-hai.png" alt="nam-hai" id="textWrapper">
+        <img src="cursor-image.jpg" alt="nft" id="cursorImage">
+        <div class="cursor">
+        </div>
+    </div>
+    <div class="wrapper">
+        <h2>Lucas <span>Nam Haï</span> TRAN</h2>
+        <div class="hero">
+
+        </div>
+        <h2>- Developper -</h2>
+    </div>
+    <script type="text/javascript" src="script.js"></script>
+</body>
+</html>
